@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Психологическая помощь детям и подросткам — Олеся Портер</title>
+  <meta name="description" content="Индивидуальные занятия и групповые тренинги для детей от 7 лет и подростков до 18 лет. Очно и онлайн. Запись в Telegram.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbf7f0;
+      --bg-alt: #f1ebdf;
+      --surface: #ffffff;
+      --text: #33302a;
+      --muted: #6b655a;
+      --accent: #3d8580;
+      --accent-dark: #2f6b67;
+      --sage: #7c9a5e;
+      --sage-light: #e8eedb;
+      --border: #e5dccd;
+      --radius: 20px;
+      --shadow: 0 10px 30px rgba(90, 70, 40, .10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body { font-family: "Manrope", system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 17px; }
+    h1, h2, h3 { font-family: "Lora", Georgia, serif; font-weight: 600; line-height: 1.25; }
+    h1 { font-size: clamp(32px, 5vw, 56px); }
+    h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 14px; }
+    h3 { font-size: 20px; margin-bottom: 8px; }
+    img { display: block; max-width: 100%; }
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    section { padding: 90px 0; }
+    .section-alt { background: var(--bg-alt); }
+    .lead { color: var(--muted); max-width: 680px; margin-bottom: 44px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 15px 28px; border-radius: 999px; font-weight: 600; font-size: 16px; text-decoration: none;
+      transition: background .2s, transform .2s, color .2s; border: 2px solid var(--accent); cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+    .btn-outline { background: transparent; color: var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: #fff; }
+    .btn-light { background: #fff; color: var(--accent-dark); border-color: #fff; }
+    .tg-icon { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 50; background: rgba(251,247,240,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 20px; }
+    .logo { text-decoration: none; color: inherit; line-height: 1.2; }
+    .logo strong { font-family: "Lora", serif; font-size: 21px; display: block; }
+    .logo span { font-size: 13px; color: var(--muted); }
+    nav ul { display: flex; gap: 26px; list-style: none; }
+    nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--muted); }
+    nav a:hover { color: var(--accent); }
+    .header-inner > .btn { padding: 10px 20px; font-size: 15px; }
+    .burger { display: none; background: none; border: 0; cursor: pointer; padding: 8px; }
+    .burger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; }
+
+    /* Hero */
+    .hero {
+      position: relative; color: #fff; padding: 120px 0 110px;
+      background: linear-gradient(90deg, rgba(38,44,32,.82) 0%, rgba(38,44,32,.55) 55%, rgba(38,44,32,.15) 100%), url("img/hero.jpg") center / cover no-repeat;
+    }
+    .hero-content { max-width: 640px; }
+    .hero .sub { font-size: 19px; margin: 22px 0 14px; opacity: .93; }
+    .hero .line { font-weight: 600; margin-bottom: 26px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin-bottom: 34px; }
+    .badges li { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(4px); padding: 7px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; }
+
+    /* Requests */
+    .req-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
+    .req-card .num { width: 40px; height: 40px; border-radius: 12px; background: var(--sage-light); color: #55703c; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 16px; }
+    .req-card h3 { font-size: 18px; }
+    .req-card p { color: var(--muted); font-size: 15px; }
+
+    /* Photo cards (classes) */
+    .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .photo-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; }
+    .photo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .photo-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .photo-card .body { padding: 22px 24px 26px; }
+    .photo-card p { color: var(--muted); font-size: 15px; }
+
+    /* Formats */
+    .format-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .service-card { display: flex; flex-direction: column; position: relative; }
+    .service-card p { color: var(--muted); font-size: 15px; flex-grow: 1; }
+    .service-card .meta { font-size: 14px; color: var(--muted); margin: 18px 0 4px; }
+    .service-card .price { font-family: "Lora", serif; font-size: 28px; font-weight: 600; margin-bottom: 20px; }
+    .service-card .price small { font-family: "Manrope", sans-serif; font-size: 15px; font-weight: 500; color: var(--muted); }
+    .service-card .btn { padding: 12px 20px; }
+    .service-card.featured { border: 2px solid var(--sage); box-shadow: var(--shadow); }
+    .tag { position: absolute; top: -13px; left: 26px; background: var(--sage); color: #fff; font-size: 13px; font-weight: 600; padding: 4px 14px; border-radius: 999px; }
+    .note { margin-top: 28px; color: var(--muted); font-size: 15px; text-align: center; }
+
+    /* Teen questions */
+    .q-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .q-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; }
+    .q-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .q-card:hover img { transform: scale(1.05); }
+    .q-card blockquote {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 22px 20px; color: #fff;
+      font-family: "Lora", serif; font-size: 20px; line-height: 1.35;
+      background: linear-gradient(to top, rgba(36,38,28,.85), rgba(36,38,28,0));
+    }
+    .q-caption { margin-top: 32px; text-align: center; color: var(--muted); max-width: 640px; margin-left: auto; margin-right: auto; }
+
+    /* Split blocks */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .split img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .split p { margin-bottom: 16px; color: var(--muted); }
+    .split .btn { margin-top: 10px; }
+    .check-list { list-style: none; display: grid; gap: 12px; margin-top: 8px; }
+    .check-list li { position: relative; padding-left: 36px; }
+    .check-list li::before {
+      content: "✓"; position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%;
+      background: var(--sage-light); color: #55703c; font-size: 13px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* About */
+    .about-photo {
+      position: relative; aspect-ratio: 4 / 5; max-width: 420px; border-radius: 200px 200px var(--radius) var(--radius);
+      background: linear-gradient(160deg, #e9dcc6, #c9d6b4); overflow: hidden; box-shadow: var(--shadow);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .about-photo .initials { font-family: "Lora", serif; font-size: 80px; color: rgba(255,255,255,.85); }
+    .about-name { font-size: 18px; font-weight: 600; color: var(--sage); margin-bottom: 18px; }
+    .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; list-style: none; }
+    .facts li { background: var(--surface); border: 1px solid var(--border); padding: 8px 16px; border-radius: 999px; font-size: 14px; }
+
+    /* Help */
+    .help {
+      color: #fff; text-align: center; padding: 110px 0;
+      background: linear-gradient(120deg, rgba(45,90,86,.80), rgba(95,110,60,.72)), url("img/help-bg.jpg") center / cover no-repeat;
+    }
+    .help p { max-width: 580px; margin: 0 auto 32px; font-size: 18px; opacity: .93; }
+
+    /* Reviews */
+    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .review { display: flex; flex-direction: column; }
+    .review .quote { font-family: "Lora", serif; font-size: 48px; line-height: 1; color: var(--accent); height: 30px; }
+    .review p { color: var(--muted); font-style: italic; flex-grow: 1; margin: 14px 0 20px; }
+    .review .author { font-weight: 600; }
+    .review .author span { display: block; font-weight: 400; font-size: 14px; color: var(--muted); }
+
+    /* Footer */
+    footer { padding: 44px 0; border-top: 1px solid var(--border); font-size: 14px; color: var(--muted); }
+    .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    footer strong { color: var(--text); }
+    footer a { color: var(--accent); }
+    footer p + p { margin-top: 8px; }
+
+    .tg-float {
+      position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 58px; height: 58px; border-radius: 50%;
+      background: #2aabee; color: #fff; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(42,171,238,.4); transition: transform .2s;
+    }
+    .tg-float:hover { transform: scale(1.08); }
+    .tg-float .tg-icon { width: 28px; height: 28px; }
+
+    @media (max-width: 1000px) {
+      .req-grid { grid-template-columns: repeat(3, 1fr); }
+      .format-grid, .photo-grid, .q-grid, .reviews { grid-template-columns: repeat(2, 1fr); }
+      nav ul { gap: 18px; }
+      .header-inner > .btn { display: none; }
+    }
+    @media (max-width: 820px) {
+      section { padding: 64px 0; }
+      .hero { padding: 80px 0; background: linear-gradient(rgba(38,44,32,.7), rgba(38,44,32,.7)), url("img/hero.jpg") center / cover no-repeat; }
+      .split { grid-template-columns: 1fr; gap: 32px; }
+      .split.reverse .split-media { order: -1; }
+      .about-photo { margin: 0 auto; max-width: 320px; }
+      .burger { display: block; }
+      nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 16px 20px 24px; }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; gap: 14px; }
+      nav a { font-size: 17px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .req-grid, .format-grid, .photo-grid, .q-grid, .reviews { grid-template-columns: 1fr; }
+      .hero .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Шапка -->
+  <header>
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <strong>Олеся Портер</strong>
+        <span>психолог для детей и подростков</span>
+      </a>
+      <nav id="nav">
+        <ul>
+          <li><a href="#requests">Запросы</a></li>
+          <li><a href="#classes">Занятия</a></li>
+          <li><a href="#formats">Форматы</a></li>
+          <li><a href="#about">Обо мне</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Написать в Telegram</a>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- 2. Первый экран -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Психологическая помощь детям и подросткам</h1>
+          <p class="sub">Если ребёнку сложно справляться с тревогой, неуверенностью или конфликтами, важно вовремя оказать поддержку — чтобы он не замыкался в себе.</p>
+          <p class="line">Индивидуальные занятия и групповые тренинги для детей и подростков</p>
+          <ul class="badges">
+            <li>Очно и онлайн</li>
+            <li>Дети от 7 лет</li>
+            <li>Подростки до 18 лет</li>
+            <li>Первая встреча — знакомство и план работы</li>
+          </ul>
+          <a class="btn btn-primary" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">
+            <svg class="tg-icon" viewBox="0 0 24 24"><path d="M9.78 15.27 9.6 19.4c.4 0 .58-.17.79-.38l1.9-1.82 3.94 2.88c.72.4 1.24.19 1.43-.67l2.6-12.2c.25-1.08-.4-1.5-1.1-1.24L3.9 11.06c-1.04.4-1.03.98-.18 1.24l3.92 1.22 9.1-5.74c.43-.28.82-.12.5.16"/></svg>
+            Получить консультацию
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. С чем можно прийти -->
+    <section id="requests">
+      <div class="container">
+        <h2 style="margin-bottom:40px">С чем можно прийти</h2>
+        <div class="req-grid">
+          <div class="card req-card"><div class="num">1</div><h3>Тревога и страхи</h3><p>Страх темноты, высоты, расставания, школы, навязчивые мысли.</p></div>
+          <div class="card req-card"><div class="num">2</div><h3>Эмоции и поведение</h3><p>Вспышки гнева, истерики, агрессия, замкнутость, частые слёзы.</p></div>
+          <div class="card req-card"><div class="num">3</div><h3>Трудности в школе</h3><p>Нежелание учиться, проблемы с концентрацией, стресс перед экзаменами.</p></div>
+          <div class="card req-card"><div class="num">4</div><h3>Общение и отношения</h3><p>Сложности с друзьями, буллинг, одиночество, конфликты со сверстниками.</p></div>
+          <div class="card req-card"><div class="num">5</div><h3>Самооценка и подростковый возраст</h3><p>Неуверенность в себе, поиск себя, отношения с телом, перепады настроения.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Занятия -->
+    <section id="classes" class="section-alt">
+      <div class="container">
+        <h2>Занятия для детей и подростков</h2>
+        <p class="lead">Развивающие программы в группе или индивидуально.</p>
+        <div class="photo-grid">
+          <article class="photo-card">
+            <img src="img/class-emotions.jpg" alt="Две девочки обнимаются" loading="lazy">
+            <div class="body"><h3>Развитие эмоционального интеллекта</h3><p>Учимся понимать свои чувства и чувства других, справляться с гневом, обидой и тревогой.</p></div>
+          </article>
+          <article class="photo-card">
+            <img src="img/class-speaking.jpg" alt="Мальчик говорит в микрофон" loading="lazy">
+            <div class="body"><h3>Публичные выступления и ораторское искусство</h3><p>Перестаём бояться отвечать у доски, учимся говорить уверенно и интересно.</p></div>
+          </article>
+          <article class="photo-card">
+            <img src="img/class-strengths.jpg" alt="Радостная девушка в поле" loading="lazy">
+            <div class="body"><h3>Выявление и развитие сильных сторон личности</h3><p>Находим, в чём ребёнок силён, и учимся на это опираться.</p></div>
+          </article>
+          <article class="photo-card">
+            <img src="img/class-leadership.jpg" alt="Ребята работают вместе за столом" loading="lazy">
+            <div class="body"><h3>Лидерские навыки и работа в команде</h3><p>Учимся договариваться, брать ответственность и добиваться общей цели.</p></div>
+          </article>
+          <article class="photo-card">
+            <img src="img/class-communication.jpg" alt="Подруги смеются на скамейке" loading="lazy">
+            <div class="body"><h3>Налаживание коммуникации и общения</h3><p>Знакомиться, поддерживать разговор, дружить и решать конфликты.</p></div>
+          </article>
+          <article class="photo-card">
+            <img src="img/class-selfesteem.jpg" alt="Уверенная девушка" loading="lazy">
+            <div class="body"><h3>Работа с самооценкой</h3><p>Формируем устойчивое отношение к себе, которое не рушится от чужих оценок.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Форматы работы -->
+    <section id="formats">
+      <div class="container">
+        <h2 style="margin-bottom:44px">Форматы работы</h2>
+        <div class="format-grid">
+          <div class="card service-card">
+            <h3>Индивидуальная консультация для ребёнка</h3>
+            <p>Встреча с ребёнком через игру, рисование и разговор. Помогаем понять, что происходит, и найти способы справиться с трудностями. Родители участвуют в начале и в конце.</p>
+            <div class="meta">50 минут</div>
+            <div class="price">3 500 ₽</div>
+            <a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Записаться</a>
+          </div>
+          <div class="card service-card">
+            <h3>Индивидуальная консультация для подростка</h3>
+            <p>Конфиденциальная встреча, где подростка слышат и принимают всерьёз. Тревога, самооценка, отношения с родителями и сверстниками, поиск себя.</p>
+            <div class="meta">50 минут</div>
+            <div class="price">3 500 ₽</div>
+            <a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Записаться</a>
+          </div>
+          <div class="card service-card featured">
+            <span class="tag">Популярное</span>
+            <h3>Групповые занятия</h3>
+            <p>Тренинги в небольших группах сверстников: живое общение, упражнения и игры. Прокачиваем навыки из раздела «Занятия» в безопасной атмосфере.</p>
+            <div class="meta">90 минут · до 8 человек</div>
+            <div class="price">1 800 ₽ <small>за занятие</small></div>
+            <a class="btn btn-primary" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Узнать о ближайшей группе</a>
+          </div>
+          <div class="card service-card">
+            <h3>Индивидуальные занятия</h3>
+            <p>Развивающая программа один на один: выбираем направление (например, публичные выступления или самооценка) и двигаемся в удобном темпе.</p>
+            <div class="meta">50 минут</div>
+            <div class="price">3 000 ₽</div>
+            <a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Записаться</a>
+          </div>
+        </div>
+        <p class="note">Все форматы доступны очно и онлайн.</p>
+      </div>
+    </section>
+
+    <!-- 6. Каждый ребёнок задаётся вопросом -->
+    <section class="section-alt">
+      <div class="container">
+        <h2 style="margin-bottom:40px">Каждый ребёнок и подросток задаётся вопросом</h2>
+        <div class="q-grid">
+          <figure class="q-card"><img src="img/q-parents.jpg" alt="Обиженный мальчик рядом с отцом" loading="lazy"><blockquote>«Родители меня не понимают»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-gadgets.jpg" alt="Подростки с телефонами" loading="lazy"><blockquote>«Не могу без гаджетов»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-body.jpg" alt="Отражение в зеркале" loading="lazy"><blockquote>«Моё тело непропорционально, я себе не нравлюсь»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-afraid.jpg" alt="Смущённая девочка" loading="lazy"><blockquote>«Страшно отвечать у доски»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-apathy.jpg" alt="Девушка сидит, опустив голову" loading="lazy"><blockquote>«То ничего не хочется, то всё бесит»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-irritation.jpg" alt="Девушка держится за голову" loading="lazy"><blockquote>«Часто раздражаюсь и срываюсь на близких»</blockquote></figure>
+        </div>
+        <p class="q-caption">Это нормальные переживания взросления. Но справляться с ними в одиночку тяжело, и здесь может помочь психолог.</p>
+      </div>
+    </section>
+
+    <!-- 7. Прокачать навыки -->
+    <section>
+      <div class="container split">
+        <div>
+          <h2>Предлагаю прокачать навыки с живым общением</h2>
+          <p>Подростки проводят много времени в телефоне, а реальное общение даётся всё сложнее. На групповых занятиях ребята встречаются со сверстниками, выполняют упражнения, спорят, выступают и поддерживают друг друга.</p>
+          <p>Это не школьный урок: здесь нет оценок и «неправильных» ответов. Есть безопасная атмосфера, в которой можно попробовать новое и не бояться ошибиться.</p>
+          <a class="btn btn-primary" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Записаться в группу</a>
+        </div>
+        <div class="split-media"><img src="img/group-1.jpg" alt="Групповое занятие у флипчарта" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- 8. Вопросы, которые решают групповые занятия -->
+    <section class="section-alt">
+      <div class="container split reverse">
+        <div class="split-media"><img src="img/group-2.jpg" alt="Двое мальчишек обнимаются и смеются" loading="lazy"></div>
+        <div>
+          <h2>Вопросы, которые решают групповые занятия</h2>
+          <ul class="check-list">
+            <li>Трудности в общении со сверстниками</li>
+            <li>Неуверенность в себе и страх выступать</li>
+            <li>Конфликты с родителями и в классе</li>
+            <li>Отсутствие мотивации к учёбе</li>
+            <li>Неумение справляться с эмоциями</li>
+            <li>Зависимость от гаджетов</li>
+            <li>Страх выбора профессии</li>
+            <li>Адаптация в новой школе или классе</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Обо мне -->
+    <section id="about">
+      <div class="container split reverse">
+        <div class="split-media">
+          <div class="about-photo">
+            <span class="initials">ОП</span>
+            <img src="img/photo.jpg" alt="Психолог Олеся Портер" onerror="this.remove()">
+          </div>
+        </div>
+        <div>
+          <h2>Обо мне</h2>
+          <div class="about-name">Олеся Портер</div>
+          <p>Я психолог, работаю с детьми, подростками и их родителями. Провожу индивидуальные консультации и групповые тренинги.</p>
+          <p>Я верю, что за «трудным поведением» всегда стоит чувство, которое ребёнку пока сложно выразить словами. Моя задача — помочь его заметить, понять и найти для него безопасный выход.</p>
+          <p>На встречах я создаю атмосферу, в которой ребёнку и подростку спокойно и интересно. Родители для меня — союзники: вместе мы ищем то, что поможет именно вашей семье.</p>
+          <ul class="facts">
+            <li>Опыт работы — [уточнить]</li>
+            <li>Образование — [уточнить]</li>
+            <li>Конфиденциальность и бережный подход</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Нужна помощь? -->
+    <section class="help">
+      <div class="container">
+        <h2>Нужна помощь?</h2>
+        <p>Напишите мне в Telegram: коротко расскажите о ситуации и возрасте ребёнка. Я отвечу, помогу разобраться и предложу подходящий формат.</p>
+        <a class="btn btn-light" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">
+          <svg class="tg-icon" viewBox="0 0 24 24"><path d="M9.78 15.27 9.6 19.4c.4 0 .58-.17.79-.38l1.9-1.82 3.94 2.88c.72.4 1.24.19 1.43-.67l2.6-12.2c.25-1.08-.4-1.5-1.1-1.24L3.9 11.06c-1.04.4-1.03.98-.18 1.24l3.92 1.22 9.1-5.74c.43-.28.82-.12.5.16"/></svg>
+          Написать @Olesya_Porter
+        </a>
+      </div>
+    </section>
+
+    <!-- 11. Отзывы (заглушки — заменить реальными) -->
+    <section id="reviews">
+      <div class="container">
+        <h2 style="margin-bottom:40px">Отзывы</h2>
+        <div class="reviews">
+          <div class="card review"><div class="quote">“</div><p>Здесь будет отзыв клиента.</p><div class="author">Имя<span>мама подростка, 14 лет</span></div></div>
+          <div class="card review"><div class="quote">“</div><p>Здесь будет отзыв клиента.</p><div class="author">Имя<span>папа ученика, 9 лет</span></div></div>
+          <div class="card review"><div class="quote">“</div><p>Здесь будет отзыв клиента.</p><div class="author">Имя<span>участница группового тренинга, 16 лет</span></div></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 12. Подвал -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <p><strong>Олеся Портер — психолог для детей и подростков</strong></p>
+        <p>Telegram: <a href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">@Olesya_Porter</a></p>
+        <p>© 2026 Олеся Портер</p>
+      </div>
+      <div>
+        <p>Психологическое консультирование не является медицинской услугой. Если вам или вашему ребёнку угрожает опасность, звоните 112.</p>
+        <p>Телефон доверия для детей, подростков и родителей: <a href="tel:88002000122">8-800-2000-122</a> (бесплатно).</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="tg-float" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener" aria-label="Написать в Telegram">
+    <svg class="tg-icon" viewBox="0 0 24 24"><path d="M9.78 15.27 9.6 19.4c.4 0 .58-.17.79-.38l1.9-1.82 3.94 2.88c.72.4 1.24.19 1.43-.67l2.6-12.2c.25-1.08-.4-1.5-1.1-1.24L3.9 11.06c-1.04.4-1.03.98-.18 1.24l3.92 1.22 9.1-5.74c.43-.28.82-.12.5.16"/></svg>
+  </a>
+
+  <script>
+    const nav = document.getElementById('nav');
+    document.getElementById('burger').addEventListener('click', () => nav.classList.toggle('open'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  </script>
+</body>
+</html>
