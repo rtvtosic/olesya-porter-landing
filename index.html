@@ -7,29 +7,31 @@
   <meta name="description" content="Индивидуальные занятия и групповые тренинги для детей от 7 лет и подростков до 18 лет. Очно и онлайн. Запись в Telegram.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbf7f0;
-      --bg-alt: #f1ebdf;
+      --bg: #fbfaf8;
+      --bg-alt: #f3effa;
       --surface: #ffffff;
-      --text: #33302a;
-      --muted: #6b655a;
-      --accent: #3d8580;
-      --accent-dark: #2f6b67;
-      --sage: #7c9a5e;
-      --sage-light: #e8eedb;
-      --border: #e5dccd;
+      --text: #2b2838;
+      --muted: #625e70;
+      --accent: #7a66b3;
+      --accent-dark: #5f4d96;
+      --sage: #67982c;
+      --sage-light: #e6f4d2;
+      --ochre: #a3d36a;
+      --ochre-light: #eef7df;
+      --border: #e7e2ef;
       --radius: 20px;
-      --shadow: 0 10px 30px rgba(90, 70, 40, .10);
+      --shadow: 0 10px 30px rgba(80, 60, 130, .10);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    body { font-family: "Manrope", system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 17px; }
-    h1, h2, h3 { font-family: "Lora", Georgia, serif; font-weight: 600; line-height: 1.25; }
-    h1 { font-size: clamp(32px, 5vw, 56px); }
-    h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 14px; }
-    h3 { font-size: 20px; margin-bottom: 8px; }
+    body { font-family: "Nunito", system-ui, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; font-size: 17px; }
+    h1, h2, h3 { font-family: "Nunito", system-ui, sans-serif; font-weight: 600; line-height: 1.25; letter-spacing: -.01em; }
+    h1 { font-size: clamp(30px, 4.4vw, 50px); }
+    h2 { font-size: clamp(24px, 3vw, 34px); margin-bottom: 14px; }
+    h3 { font-size: 18px; margin-bottom: 8px; }
     img { display: block; max-width: 100%; }
     .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
     section { padding: 90px 0; }
@@ -48,12 +50,13 @@
     .btn-outline:hover { background: var(--accent); color: #fff; }
     .btn-light { background: #fff; color: var(--accent-dark); border-color: #fff; }
     .tg-icon { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+    .btn, nav, .logo span, .badges, .tag, .meta, .num, .facts, .author, .note, .about-name { font-family: "Nunito", system-ui, sans-serif; }
 
     /* Header */
-    header { position: sticky; top: 0; z-index: 50; background: rgba(251,247,240,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    header { position: sticky; top: 0; z-index: 50; background: rgba(251,250,248,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
     .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 20px; }
     .logo { text-decoration: none; color: inherit; line-height: 1.2; }
-    .logo strong { font-family: "Lora", serif; font-size: 21px; display: block; }
+    .logo strong { font-family: "Nunito", system-ui, sans-serif; font-size: 21px; display: block; }
     .logo span { font-size: 13px; color: var(--muted); }
     nav ul { display: flex; gap: 26px; list-style: none; }
     nav a { text-decoration: none; font-size: 15px; font-weight: 500; color: var(--muted); }
@@ -65,7 +68,6 @@
     /* Hero */
     .hero {
       position: relative; color: #fff; padding: 120px 0 110px;
-      background: linear-gradient(90deg, rgba(38,44,32,.82) 0%, rgba(38,44,32,.55) 55%, rgba(38,44,32,.15) 100%), url("img/hero.jpg") center / cover no-repeat;
     }
     .hero-content { max-width: 640px; }
     .hero .sub { font-size: 19px; margin: 22px 0 14px; opacity: .93; }
@@ -74,9 +76,9 @@
     .badges li { background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(4px); padding: 7px 16px; border-radius: 999px; font-size: 14px; font-weight: 500; }
 
     /* Requests */
-    .req-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .req-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
-    .req-card .num { width: 40px; height: 40px; border-radius: 12px; background: var(--sage-light); color: #55703c; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 16px; }
+    .req-card .num { width: 40px; height: 40px; border-radius: 12px; background: var(--ochre); color: #2f4a10; display: flex; align-items: center; justify-content: center; font-weight: 700; margin-bottom: 16px; }
     .req-card h3 { font-size: 18px; }
     .req-card p { color: var(--muted); font-size: 15px; }
 
@@ -85,7 +87,10 @@
     .photo-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; }
     .photo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
     .photo-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
-    .photo-card .body { padding: 22px 24px 26px; }
+    .photo-card { display: flex; flex-direction: column; }
+    .photo-card .body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex-grow: 1; }
+    .photo-card .body p { flex-grow: 1; margin-bottom: 20px; }
+    .photo-card .btn { align-self: flex-start; padding: 10px 22px; font-size: 15px; }
     .photo-card p { color: var(--muted); font-size: 15px; }
 
     /* Formats */
@@ -93,11 +98,15 @@
     .service-card { display: flex; flex-direction: column; position: relative; }
     .service-card p { color: var(--muted); font-size: 15px; flex-grow: 1; }
     .service-card .meta { font-size: 14px; color: var(--muted); margin: 18px 0 4px; }
-    .service-card .price { font-family: "Lora", serif; font-size: 28px; font-weight: 600; margin-bottom: 20px; }
-    .service-card .price small { font-family: "Manrope", sans-serif; font-size: 15px; font-weight: 500; color: var(--muted); }
+    .service-card .price { font-family: "Nunito", system-ui, sans-serif; font-size: 28px; font-weight: 600; margin-bottom: 20px; }
+    .service-card .price small { font-family: "Nunito", system-ui, sans-serif; font-size: 15px; font-weight: 500; color: var(--muted); }
     .service-card .btn { padding: 12px 20px; }
-    .service-card.featured { border: 2px solid var(--sage); box-shadow: var(--shadow); }
-    .tag { position: absolute; top: -13px; left: 26px; background: var(--sage); color: #fff; font-size: 13px; font-weight: 600; padding: 4px 14px; border-radius: 999px; }
+    .service-card.featured { border: 2px solid var(--ochre); box-shadow: var(--shadow); }
+    .tag { position: absolute; top: -13px; left: 26px; background: var(--ochre); color: #2f4a10; font-size: 13px; font-weight: 600; padding: 4px 14px; border-radius: 999px; }
+    .service-card .desc { flex-grow: 1; }
+    .service-card .desc p + p { margin-top: 10px; }
+    .subhead { font-family: "Nunito", system-ui, sans-serif; font-weight: 600; font-size: 18px; color: var(--sage); margin-bottom: 18px; }
+    .check-list strong { font-family: "Nunito", system-ui, sans-serif; font-weight: 600; font-size: 16px; }
     .note { margin-top: 28px; color: var(--muted); font-size: 15px; text-align: center; }
 
     /* Teen questions */
@@ -107,8 +116,8 @@
     .q-card:hover img { transform: scale(1.05); }
     .q-card blockquote {
       position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 22px 20px; color: #fff;
-      font-family: "Lora", serif; font-size: 20px; line-height: 1.35;
-      background: linear-gradient(to top, rgba(36,38,28,.85), rgba(36,38,28,0));
+      font-family: "Nunito", system-ui, sans-serif; font-style: italic; font-size: 21px; line-height: 1.35;
+      background: linear-gradient(to top, rgba(46,36,78,.85), rgba(46,36,78,0));
     }
     .q-caption { margin-top: 32px; text-align: center; color: var(--muted); max-width: 640px; margin-left: auto; margin-right: auto; }
 
@@ -121,18 +130,18 @@
     .check-list li { position: relative; padding-left: 36px; }
     .check-list li::before {
       content: "✓"; position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%;
-      background: var(--sage-light); color: #55703c; font-size: 13px; font-weight: 700;
+      background: var(--sage-light); color: #4e7f1c; font-size: 13px; font-weight: 700;
       display: flex; align-items: center; justify-content: center;
     }
 
     /* About */
     .about-photo {
       position: relative; aspect-ratio: 4 / 5; max-width: 420px; border-radius: 200px 200px var(--radius) var(--radius);
-      background: linear-gradient(160deg, #e9dcc6, #c9d6b4); overflow: hidden; box-shadow: var(--shadow);
+      background: linear-gradient(160deg, #e6dcf5, #dcefc4); overflow: hidden; box-shadow: var(--shadow);
       display: flex; align-items: center; justify-content: center;
     }
     .about-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .about-photo .initials { font-family: "Lora", serif; font-size: 80px; color: rgba(255,255,255,.85); }
+    .about-photo .initials { font-family: "Nunito", system-ui, sans-serif; font-size: 80px; color: rgba(255,255,255,.85); }
     .about-name { font-size: 18px; font-weight: 600; color: var(--sage); margin-bottom: 18px; }
     .facts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; list-style: none; }
     .facts li { background: var(--surface); border: 1px solid var(--border); padding: 8px 16px; border-radius: 999px; font-size: 14px; }
@@ -140,14 +149,13 @@
     /* Help */
     .help {
       color: #fff; text-align: center; padding: 110px 0;
-      background: linear-gradient(120deg, rgba(45,90,86,.80), rgba(95,110,60,.72)), url("img/help-bg.jpg") center / cover no-repeat;
     }
     .help p { max-width: 580px; margin: 0 auto 32px; font-size: 18px; opacity: .93; }
 
     /* Reviews */
     .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .review { display: flex; flex-direction: column; }
-    .review .quote { font-family: "Lora", serif; font-size: 48px; line-height: 1; color: var(--accent); height: 30px; }
+    .review .quote { font-family: "Nunito", system-ui, sans-serif; font-size: 56px; line-height: 1; color: var(--ochre); height: 30px; }
     .review p { color: var(--muted); font-style: italic; flex-grow: 1; margin: 14px 0 20px; }
     .review .author { font-weight: 600; }
     .review .author span { display: block; font-weight: 400; font-size: 14px; color: var(--muted); }
@@ -167,15 +175,92 @@
     .tg-float:hover { transform: scale(1.08); }
     .tg-float .tg-icon { width: 28px; height: 28px; }
 
+    /* Friendly look */
+    body { font-weight: 500; }
+    h1, h2, h3 { font-weight: 800; letter-spacing: 0; }
+    h2 { margin-bottom: 18px; }
+    h2::after { content: ""; display: block; width: 84px; height: 10px; margin-top: 12px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 84 10'%3E%3Cpath fill='none' stroke='%23a3d36a' stroke-width='4' stroke-linecap='round' d='M2 6c7-5 13-5 20 0s13 5 20 0 13-5 20 0 13 5 20 0'/%3E%3C/svg%3E") no-repeat; }
+    .logo strong { font-weight: 800; color: var(--accent-dark); }
+    nav a { font-weight: 700; }
+
+    .btn { font-weight: 800; }
+    .btn:active { transform: translateY(2px); }
+    .btn-primary { box-shadow: 0 5px 0 var(--accent-dark); }
+    .btn-primary:hover { box-shadow: 0 7px 0 #4d3e7c; }
+    .btn-outline { background: #fff; }
+    .btn-light { box-shadow: 0 5px 0 rgba(47, 74, 16, .35); }
+
+    .section-alt { position: relative; }
+    .section-alt::before, .section-alt::after, .hero::after { content: ""; position: absolute; left: 0; right: 0; height: 40px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath fill='%23f3effa' d='M0 40V20C240 0 480 0 720 20s480 20 720 0v20z'/%3E%3C/svg%3E") center / 100% 100% no-repeat; pointer-events: none; }
+    .section-alt::before { top: -39px; }
+    .section-alt::after { bottom: -39px; transform: scaleY(-1); }
+
+    .hero { color: var(--text); padding: 64px 0 120px; overflow: hidden; background: linear-gradient(135deg, var(--bg-alt), var(--ochre-light)); }
+    .hero::after { bottom: -1px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 40' preserveAspectRatio='none'%3E%3Cpath fill='%23fbfaf8' d='M0 40V20C240 0 480 0 720 20s480 20 720 0v20z'/%3E%3C/svg%3E"); }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+    .hero .sub { opacity: 1; color: var(--muted); }
+    .hero .line { font-weight: 800; color: var(--accent-dark); }
+    .badges li { background: #fff; border-color: var(--border); backdrop-filter: none; font-weight: 700; }
+    .hero-media { position: relative; }
+    .hero-media img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 10px solid #fff; border-radius: 47% 53% 44% 56% / 54% 44% 56% 46%; box-shadow: var(--shadow); }
+    .float { position: absolute; width: 44px; height: 44px; background: center / contain no-repeat; animation: float 5s ease-in-out infinite; }
+    .float-1 { top: 4%; left: 2%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237a66b3' d='M12 21S3 15.5 3 8.8C3 5.9 5.2 4 7.7 4c1.800 0 3.400 1 4.300 2.600C12.900 5 14.500 4 16.300 4 18.800 4 21 5.900 21 8.800 21 15.500 12 21 12 21z'/%3E%3C/svg%3E"); }
+    .float-2 { top: 12%; right: 0; width: 36px; height: 36px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23a3d36a' d='M4 20C3 10 9 3 21 3c0 12-7 18-17 17z'/%3E%3C/svg%3E"); animation-delay: -2s; }
+    .float-3 { bottom: 6%; left: 8%; width: 32px; height: 32px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23a3d36a' d='M12 21S3 15.5 3 8.8C3 5.9 5.2 4 7.7 4c1.800 0 3.400 1 4.300 2.600C12.900 5 14.500 4 16.300 4 18.800 4 21 5.900 21 8.800 21 15.500 12 21 12 21z'/%3E%3C/svg%3E"); animation-delay: -3.500s; }
+    @keyframes float { 50% { transform: translateY(-10px) rotate(6deg); } }
+    @media (prefers-reduced-motion: reduce) { .float { animation: none; } html { scroll-behavior: auto; } }
+
+    .card { border-radius: 28px; }
+    .req-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .req-card { flex: 1 1 300px; max-width: 360px; border: 0; background: var(--ochre-light); transition: transform .25s; }
+    .req-card:nth-child(even) { background: var(--bg-alt); }
+    .req-card:nth-child(even) .num { background: var(--accent); color: #fff; }
+    .req-card:hover { transform: translateY(-4px) rotate(-.6deg); }
+    .req-card .num { width: 48px; height: 48px; font-size: 20px; font-weight: 800; border-radius: 58% 42% 55% 45% / 50% 58% 42% 50%; }
+    .req-card h3 { font-size: 19px; }
+    .req-card p, .photo-card p, .service-card p { font-size: 16px; }
+
+    .photo-card { border: 0; border-radius: 32px; box-shadow: var(--shadow); }
+    .photo-card:hover { transform: translateY(-6px) rotate(-.6deg); }
+    .photo-card img { width: calc(100% - 24px); margin: 12px 12px 0; border-radius: 24px; object-fit: contain; }
+
+    .format-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .service-card { box-shadow: var(--shadow); border: 0; }
+    .service-card .price { font-weight: 800; color: var(--accent-dark); }
+    .service-card.featured { border: 3px solid var(--ochre); }
+    .tag { font-weight: 800; transform: rotate(-2deg); }
+
+    .q-card { border-radius: 28px; box-shadow: var(--shadow); }
+    .q-card blockquote { left: 12px; right: 12px; bottom: 12px; padding: 12px 16px; color: var(--text); font-style: normal; font-weight: 700; font-size: 16px; background: #fff; border-radius: 18px; }
+    .q-card blockquote::before { content: ""; position: absolute; top: -10px; left: 26px; border: 10px solid transparent; border-top: 0; border-bottom-color: #fff; }
+
+    .split .split-media > img { border-radius: 56px 120px 56px 120px; }
+    .subhead { font-weight: 800; }
+    .check-list strong { font-weight: 800; font-size: 17px; }
+    .check-list li::before { background: var(--ochre); color: #2f4a10; }
+    .about-name { font-weight: 800; }
+    .facts li { background: var(--ochre-light); border: 0; font-weight: 700; }
+
+    .help { padding: 30px 0 90px; color: #fff; background: none; }
+    .help .container { width: calc(100% - 40px); max-width: 1100px; padding: 72px 28px; border-radius: 44px; background: url("img/help-bg.svg") center bottom / cover no-repeat, linear-gradient(120deg, #5f4d96, #557d2d); }
+    .help h2::after { margin-left: auto; margin-right: auto; }
+    .help p { opacity: 1; }
+    .review { background: var(--bg-alt); border: 0; }
+    .review:nth-child(even) { background: var(--ochre-light); }
+    .review .quote { color: var(--accent); font-weight: 800; }
+    .review .author { font-weight: 800; }
+
     @media (max-width: 1000px) {
-      .req-grid { grid-template-columns: repeat(3, 1fr); }
+      .req-grid { grid-template-columns: repeat(2, 1fr); }
       .format-grid, .photo-grid, .q-grid, .reviews { grid-template-columns: repeat(2, 1fr); }
       nav ul { gap: 18px; }
       .header-inner > .btn { display: none; }
     }
     @media (max-width: 820px) {
       section { padding: 64px 0; }
-      .hero { padding: 80px 0; background: linear-gradient(rgba(38,44,32,.7), rgba(38,44,32,.7)), url("img/hero.jpg") center / cover no-repeat; }
+      .hero { padding: 40px 0 90px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+      .hero-media { max-width: 340px; margin: 0 auto; }
       .split { grid-template-columns: 1fr; gap: 32px; }
       .split.reverse .split-media { order: -1; }
       .about-photo { margin: 0 auto; max-width: 320px; }
@@ -185,6 +270,7 @@
       nav ul { flex-direction: column; gap: 14px; }
       nav a { font-size: 17px; }
       .footer-grid { grid-template-columns: 1fr; }
+      .req-card { max-width: none; }
     }
     @media (max-width: 560px) {
       .req-grid, .format-grid, .photo-grid, .q-grid, .reviews { grid-template-columns: 1fr; }
@@ -219,7 +305,7 @@
 
     <!-- 2. Первый экран -->
     <section class="hero">
-      <div class="container">
+      <div class="container hero-grid">
         <div class="hero-content">
           <h1>Психологическая помощь детям и подросткам</h1>
           <p class="sub">Если ребёнку сложно справляться с тревогой, неуверенностью или конфликтами, важно вовремя оказать поддержку — чтобы он не замыкался в себе.</p>
@@ -235,19 +321,25 @@
             Получить консультацию
           </a>
         </div>
+        <div class="hero-media">
+          <img src="img/hero.svg" alt="Группа подростков фотографируется вместе">
+          <span class="float float-1" aria-hidden="true"></span>
+          <span class="float float-2" aria-hidden="true"></span>
+          <span class="float float-3" aria-hidden="true"></span>
+        </div>
       </div>
     </section>
 
     <!-- 3. С чем можно прийти -->
     <section id="requests">
       <div class="container">
-        <h2 style="margin-bottom:40px">С чем можно прийти</h2>
+        <h2 style="margin-bottom:40px">С какими запросами можно обратиться</h2>
         <div class="req-grid">
-          <div class="card req-card"><div class="num">1</div><h3>Тревога и страхи</h3><p>Страх темноты, высоты, расставания, школы, навязчивые мысли.</p></div>
-          <div class="card req-card"><div class="num">2</div><h3>Эмоции и поведение</h3><p>Вспышки гнева, истерики, агрессия, замкнутость, частые слёзы.</p></div>
-          <div class="card req-card"><div class="num">3</div><h3>Трудности в школе</h3><p>Нежелание учиться, проблемы с концентрацией, стресс перед экзаменами.</p></div>
-          <div class="card req-card"><div class="num">4</div><h3>Общение и отношения</h3><p>Сложности с друзьями, буллинг, одиночество, конфликты со сверстниками.</p></div>
-          <div class="card req-card"><div class="num">5</div><h3>Самооценка и подростковый возраст</h3><p>Неуверенность в себе, поиск себя, отношения с телом, перепады настроения.</p></div>
+          <div class="card req-card"><div class="num">1</div><h3>Тревожность и детские страхи</h3><p>Страх темноты и высоты, переживания из-за разлуки с близкими, тревога перед школой, беспокойные мысли и внутреннее напряжение.</p></div>
+          <div class="card req-card"><div class="num">2</div><h3>Эмоции и поведенческие трудности</h3><p>Резкие эмоциональные реакции, вспышки раздражения, частые слёзы, агрессивное поведение, замкнутость и сложности с выражением чувств.</p></div>
+          <div class="card req-card"><div class="num">3</div><h3>Учёба и школьная адаптация</h3><p>Потеря интереса к занятиям, трудности с концентрацией внимания, волнение перед контрольными и экзаменами, эмоциональная усталость от школы.</p></div>
+          <div class="card req-card"><div class="num">4</div><h3>Отношения и общение</h3><p>Сложности в установлении дружеских контактов, конфликты с одноклассниками, переживания из-за одиночества, буллинг и непонимание со стороны сверстников.</p></div>
+          <div class="card req-card"><div class="num">5</div><h3>Самооценка и особенности подросткового возраста</h3><p>Сомнения в собственных силах, поиск личной идентичности, переживания из-за внешности, эмоциональная нестабильность и сложности с принятием себя.</p></div>
         </div>
       </div>
     </section>
@@ -255,32 +347,32 @@
     <!-- 4. Занятия -->
     <section id="classes" class="section-alt">
       <div class="container">
-        <h2>Занятия для детей и подростков</h2>
+        <h2>Направления занятий и развития навыков</h2>
         <p class="lead">Развивающие программы в группе или индивидуально.</p>
         <div class="photo-grid">
           <article class="photo-card">
-            <img src="img/class-emotions.jpg" alt="Две девочки обнимаются" loading="lazy">
-            <div class="body"><h3>Развитие эмоционального интеллекта</h3><p>Учимся понимать свои чувства и чувства других, справляться с гневом, обидой и тревогой.</p></div>
+            <img src="img/class-emotions.svg" alt="Девочка с воздушным шариком-улыбкой" loading="lazy">
+            <div class="body"><h3>Эмоциональная грамотность</h3><p>Разбираемся в собственных чувствах, учимся понимать эмоции окружающих и находить конструктивные способы справляться с тревогой, гневом и обидой.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img/class-speaking.jpg" alt="Мальчик говорит в микрофон" loading="lazy">
-            <div class="body"><h3>Публичные выступления и ораторское искусство</h3><p>Перестаём бояться отвечать у доски, учимся говорить уверенно и интересно.</p></div>
+            <img src="img/class-speaking.svg" alt="Девочка выступает за трибуной с микрофоном" loading="lazy">
+            <div class="body"><h3>Уверенность в публичных выступлениях</h3><p>Осваиваем навыки самопрезентации, учимся спокойно отвечать перед классом, выступать перед аудиторией и доносить свои мысли понятно и убедительно.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img/class-strengths.jpg" alt="Радостная девушка в поле" loading="lazy">
-            <div class="body"><h3>Выявление и развитие сильных сторон личности</h3><p>Находим, в чём ребёнок силён, и учимся на это опираться.</p></div>
+            <img src="img/class-strengths.svg" alt="Подросток смотрит на лампочку-идею" loading="lazy">
+            <div class="body"><h3>Раскрытие способностей и личного потенциала</h3><p>Помогаем ребёнку увидеть свои сильные стороны, определить интересы и научиться использовать собственные ресурсы в учёбе и повседневной жизни.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img/class-leadership.jpg" alt="Ребята работают вместе за столом" loading="lazy">
-            <div class="body"><h3>Лидерские навыки и работа в команде</h3><p>Учимся договариваться, брать ответственность и добиваться общей цели.</p></div>
+            <img src="img/class-leadership.svg" alt="Двое подростков вместе отмечают общие цели" loading="lazy">
+            <div class="body"><h3>Лидерство и взаимодействие в команде</h3><p>Развиваем инициативность, ответственность и умение сотрудничать, находить компромиссы и вместе с другими двигаться к результату.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img/class-communication.jpg" alt="Подруги смеются на скамейке" loading="lazy">
-            <div class="body"><h3>Налаживание коммуникации и общения</h3><p>Знакомиться, поддерживать разговор, дружить и решать конфликты.</p></div>
+            <img src="img/class-communication.svg" alt="Двое друзей с рюкзаками разговаривают" loading="lazy">
+            <div class="body"><h3>Навыки общения</h3><p>Тренируем умение знакомиться, начинать и поддерживать диалог, выстраивать дружеские отношения, отстаивать личные границы и разрешать разногласия.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img/class-selfesteem.jpg" alt="Уверенная девушка" loading="lazy">
-            <div class="body"><h3>Работа с самооценкой</h3><p>Формируем устойчивое отношение к себе, которое не рушится от чужих оценок.</p></div>
+            <img src="img/class-selfesteem.svg" alt="Радостная девочка с плакатом-смайликом" loading="lazy">
+            <div class="body"><h3>Здоровая самооценка</h3><p>Учимся замечать собственные достижения, принимать свои особенности и сохранять уверенность в себе, даже когда мнения окружающих не совпадают с нашими.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
         </div>
       </div>
@@ -289,34 +381,37 @@
     <!-- 5. Форматы работы -->
     <section id="formats">
       <div class="container">
-        <h2 style="margin-bottom:44px">Форматы работы</h2>
+        <h2 style="margin-bottom:44px">Индивидуальные консультации и занятия</h2>
         <div class="format-grid">
           <div class="card service-card">
             <h3>Индивидуальная консультация для ребёнка</h3>
-            <p>Встреча с ребёнком через игру, рисование и разговор. Помогаем понять, что происходит, и найти способы справиться с трудностями. Родители участвуют в начале и в конце.</p>
-            <div class="meta">50 минут</div>
+            <p>Встреча, на которой ребёнок может выразить свои переживания через игру, творчество и беседу. Вместе исследуем возникшие трудности и подбираем подходящие способы справляться с ними. Родители подключаются к обсуждению в начале и в завершение встречи.</p>
+            <div class="meta">Продолжительность: 50 минут</div>
             <div class="price">3 500 ₽</div>
             <a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Записаться</a>
           </div>
           <div class="card service-card">
             <h3>Индивидуальная консультация для подростка</h3>
-            <p>Конфиденциальная встреча, где подростка слышат и принимают всерьёз. Тревога, самооценка, отношения с родителями и сверстниками, поиск себя.</p>
-            <div class="meta">50 минут</div>
+            <p>Пространство для открытого разговора без осуждения и обесценивания. Обсуждаем то, что волнует подростка: тревожность, отношения с близкими и сверстниками, уверенность в себе, личные границы и поиск собственного пути.</p>
+            <div class="meta">Продолжительность: 50 минут</div>
             <div class="price">3 500 ₽</div>
             <a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Записаться</a>
           </div>
           <div class="card service-card featured">
-            <span class="tag">Популярное</span>
+            <span class="tag">Популярный формат</span>
             <h3>Групповые занятия</h3>
-            <p>Тренинги в небольших группах сверстников: живое общение, упражнения и игры. Прокачиваем навыки из раздела «Занятия» в безопасной атмосфере.</p>
-            <div class="meta">90 минут · до 8 человек</div>
+            <div class="desc">
+              <p>Психологические тренинги в небольшой группе ровесников. Через игры, практические задания и совместное обсуждение участники развивают навыки общения, учатся понимать себя и других, взаимодействовать и увереннее чувствовать себя в коллективе.</p>
+              <p>Занятия проходят в поддерживающей обстановке, где каждый может проявить себя и попробовать новые модели поведения.</p>
+            </div>
+            <div class="meta">Продолжительность: 90 минут. Количество участников: до 8 человек.</div>
             <div class="price">1 800 ₽ <small>за занятие</small></div>
             <a class="btn btn-primary" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Узнать о ближайшей группе</a>
           </div>
           <div class="card service-card">
-            <h3>Индивидуальные занятия</h3>
-            <p>Развивающая программа один на один: выбираем направление (например, публичные выступления или самооценка) и двигаемся в удобном темпе.</p>
-            <div class="meta">50 минут</div>
+            <h3>Индивидуальные развивающие занятия</h3>
+            <p>Персональная программа с учётом потребностей и интересов ребёнка или подростка. Выбираем приоритетное направление — например, развитие коммуникативных навыков, подготовку к выступлениям или работу над самооценкой — и постепенно осваиваем новые умения в комфортном темпе.</p>
+            <div class="meta">Продолжительность: 50 минут</div>
             <div class="price">3 000 ₽</div>
             <a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Записаться</a>
           </div>
@@ -330,12 +425,12 @@
       <div class="container">
         <h2 style="margin-bottom:40px">Каждый ребёнок и подросток задаётся вопросом</h2>
         <div class="q-grid">
-          <figure class="q-card"><img src="img/q-parents.jpg" alt="Обиженный мальчик рядом с отцом" loading="lazy"><blockquote>«Родители меня не понимают»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-gadgets.jpg" alt="Подростки с телефонами" loading="lazy"><blockquote>«Не могу без гаджетов»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-body.jpg" alt="Отражение в зеркале" loading="lazy"><blockquote>«Моё тело непропорционально, я себе не нравлюсь»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-afraid.jpg" alt="Смущённая девочка" loading="lazy"><blockquote>«Страшно отвечать у доски»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-apathy.jpg" alt="Девушка сидит, опустив голову" loading="lazy"><blockquote>«То ничего не хочется, то всё бесит»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-irritation.jpg" alt="Девушка держится за голову" loading="lazy"><blockquote>«Часто раздражаюсь и срываюсь на близких»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-parents.svg" alt="Двое сидят за столом, каждый сам по себе" loading="lazy"><blockquote>«Родители меня не понимают»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-gadgets.svg" alt="Человек перед огромным смартфоном" loading="lazy"><blockquote>«Не могу без гаджетов»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-body.svg" alt="Девочка разглядывает себя в зеркале" loading="lazy"><blockquote>«Моё тело непропорционально, я себе не нравлюсь»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-afraid.svg" alt="Подросток стоит у доски" loading="lazy"><blockquote>«Страшно отвечать у доски»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-apathy.svg" alt="Девочка рядом с большим грустным смайликом" loading="lazy"><blockquote>«То ничего не хочется, то всё бесит»</blockquote></figure>
+          <figure class="q-card"><img src="img/q-irritation.svg" alt="Подросток со скрещёнными руками и грозовой тучкой над головой" loading="lazy"><blockquote>«Часто раздражаюсь и срываюсь на близких»</blockquote></figure>
         </div>
         <p class="q-caption">Это нормальные переживания взросления. Но справляться с ними в одиночку тяжело, и здесь может помочь психолог.</p>
       </div>
@@ -345,30 +440,32 @@
     <section>
       <div class="container split">
         <div>
-          <h2>Предлагаю прокачать навыки с живым общением</h2>
-          <p>Подростки проводят много времени в телефоне, а реальное общение даётся всё сложнее. На групповых занятиях ребята встречаются со сверстниками, выполняют упражнения, спорят, выступают и поддерживают друг друга.</p>
-          <p>Это не школьный урок: здесь нет оценок и «неправильных» ответов. Есть безопасная атмосфера, в которой можно попробовать новое и не бояться ошибиться.</p>
+          <h2>Групповые тренинги для подростков</h2>
+          <div class="subhead">Больше уверенности, общения и реальной практики</div>
+          <p>Сегодня подросткам легко поддерживать контакт в интернете, но живое общение по-прежнему может вызывать затруднения. Как познакомиться с новыми людьми? Как выразить своё мнение? Что делать, если возник конфликт или страшно выступать перед другими?</p>
+          <p>На групповых тренингах подростки учатся взаимодействовать со сверстниками на практике: выполняют задания, обсуждают разные точки зрения, пробуют себя в выступлениях и осваивают навыки командной работы.</p>
+          <p>Это не урок и не экзамен. Здесь не сравнивают участников и не ставят отметок. Главное — создать условия, в которых можно проявлять инициативу, учиться на собственном опыте и постепенно становиться увереннее.</p>
           <a class="btn btn-primary" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Записаться в группу</a>
         </div>
-        <div class="split-media"><img src="img/group-1.jpg" alt="Групповое занятие у флипчарта" loading="lazy"></div>
+        <div class="split-media"><img src="img/group-1.svg" alt="Ребята разговаривают за столом" loading="lazy"></div>
       </div>
     </section>
 
     <!-- 8. Вопросы, которые решают групповые занятия -->
     <section class="section-alt">
       <div class="container split reverse">
-        <div class="split-media"><img src="img/group-2.jpg" alt="Двое мальчишек обнимаются и смеются" loading="lazy"></div>
+        <div class="split-media"><img src="img/group-2.svg" alt="Двое друзей сидят рядом" loading="lazy"></div>
         <div>
-          <h2>Вопросы, которые решают групповые занятия</h2>
+          <h2>Какие задачи помогают решать групповые занятия?</h2>
           <ul class="check-list">
-            <li>Трудности в общении со сверстниками</li>
-            <li>Неуверенность в себе и страх выступать</li>
-            <li>Конфликты с родителями и в классе</li>
-            <li>Отсутствие мотивации к учёбе</li>
-            <li>Неумение справляться с эмоциями</li>
-            <li>Зависимость от гаджетов</li>
-            <li>Страх выбора профессии</li>
-            <li>Адаптация в новой школе или классе</li>
+            <li><strong>Общение со сверстниками</strong> — учимся знакомиться, находить общий язык и выстраивать дружеские отношения.</li>
+            <li><strong>Уверенность в себе</strong> — преодолеваем скованность, учимся выражать своё мнение и выступать перед аудиторией.</li>
+            <li><strong>Разрешение конфликтов</strong> — осваиваем способы договариваться и спокойнее обсуждать разногласия с родителями и одноклассниками.</li>
+            <li><strong>Учебная мотивация</strong> — разбираемся с целями, личными интересами и препятствиями, которые мешают учиться.</li>
+            <li><strong>Управление эмоциями</strong> — учимся распознавать свои чувства и выбирать подходящие способы реагирования.</li>
+            <li><strong>Баланс между интернетом и реальной жизнью</strong> — развиваем интерес к занятиям и общению за пределами экрана.</li>
+            <li><strong>Профессиональное самоопределение</strong> — исследуем интересы и способности, учимся рассматривать разные варианты будущего.</li>
+            <li><strong>Адаптация в новом коллективе</strong> — осваиваем навыки, которые помогают чувствовать себя увереннее при переходе в другую школу или класс.</li>
           </ul>
         </div>
       </div>
@@ -386,9 +483,12 @@
         <div>
           <h2>Обо мне</h2>
           <div class="about-name">Олеся Портер</div>
-          <p>Я психолог, работаю с детьми, подростками и их родителями. Провожу индивидуальные консультации и групповые тренинги.</p>
-          <p>Я верю, что за «трудным поведением» всегда стоит чувство, которое ребёнку пока сложно выразить словами. Моя задача — помочь его заметить, понять и найти для него безопасный выход.</p>
-          <p>На встречах я создаю атмосферу, в которой ребёнку и подростку спокойно и интересно. Родители для меня — союзники: вместе мы ищем то, что поможет именно вашей семье.</p>
+          <div class="subhead" style="color:var(--text)">Помогаю детям и подросткам лучше понимать себя и окружающих</div>
+          <p>Я психолог, работаю с детьми, подростками и их родителями. Провожу индивидуальные консультации и групповые тренинги, направленные на эмоциональное благополучие и развитие важных жизненных навыков.</p>
+          <p>В своей работе я стараюсь смотреть глубже внешнего поведения. За раздражительностью, слезами, отказом разговаривать или нежеланием что-либо делать могут скрываться чувства и переживания, с которыми ребёнку пока трудно справиться самостоятельно.</p>
+          <p>Моя задача — помочь ребёнку разобраться в своих эмоциях, найти подходящие способы выражать их и постепенно научиться справляться с возникающими трудностями.</p>
+          <p>Я создаю пространство, в котором можно говорить о сложном, задавать вопросы, пробовать новое и не бояться осуждения.</p>
+          <p>Родители — важные участники этого процесса. Вместе мы стараемся лучше понять потребности ребёнка, увидеть причины происходящего и найти решения, которые подойдут именно вашей семье.</p>
           <ul class="facts">
             <li>Опыт работы — [уточнить]</li>
             <li>Образование — [уточнить]</li>
