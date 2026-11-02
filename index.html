@@ -84,13 +84,13 @@
 
     /* Photo cards (classes) */
     .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .photo-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; }
+    .photo-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; margin-bottom: 24px; }
     .photo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
     .photo-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
     .photo-card { display: flex; flex-direction: column; }
     .photo-card .body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex-grow: 1; }
     .photo-card .body p { flex-grow: 1; margin-bottom: 20px; }
-    .photo-card .btn { align-self: flex-start; padding: 10px 22px; font-size: 15px; }
+    .photo-card .btn { align-self: center; padding: 10px 22px; font-size: 15px; margin-top: 20px; margin-bottom: 24px; }
     .photo-card p { color: var(--muted); font-size: 15px; }
 
     /* Formats */
@@ -489,16 +489,38 @@
           <p>Моя задача — помочь ребёнку разобраться в своих эмоциях, найти подходящие способы выражать их и постепенно научиться справляться с возникающими трудностями.</p>
           <p>Я создаю пространство, в котором можно говорить о сложном, задавать вопросы, пробовать новое и не бояться осуждения.</p>
           <p>Родители — важные участники этого процесса. Вместе мы стараемся лучше понять потребности ребёнка, увидеть причины происходящего и найти решения, которые подойдут именно вашей семье.</p>
-          <ul class="facts">
-            <li>Опыт работы — [уточнить]</li>
-            <li>Образование — [уточнить]</li>
-            <li>Конфиденциальность и бережный подход</li>
-          </ul>
+
         </div>
       </div>
     </section>
 
-    <!-- 10. Нужна помощь? -->
+    <!-- 10. Сертификаты и дипломы -->
+    <section class="section-alt">
+      <div class="container">
+        <h2>Сертификаты и дипломы</h2>
+        <p class="lead">Мои профессиональные квалификации и образование</p>
+        <div class="photo-grid">
+          <article class="photo-card">
+            <img src="PK554821_page-0001.jpg" alt="Сертификат PK554821" loading="lazy">
+            <a class="btn btn-outline" href="PK554821.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+          </article>
+          <article class="photo-card">
+            <img src="m41034_page-0001.jpg" alt="Сертификат m41034" loading="lazy">
+            <a class="btn btn-outline" href="m41034.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+          </article>
+          <article class="photo-card">
+            <img src="14458_page-0001.jpg" alt="Сертификат 14458" loading="lazy">
+            <a class="btn btn-outline" href="14458.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+          </article>
+          <article class="photo-card">
+            <img src="81e6f39a37a16e6ab7d8ac2ed068608b_page-0001.jpg" alt="Сертификат 81e6f39a37a16e6ab7d8ac2ed068608b" loading="lazy">
+            <a class="btn btn-outline" href="81e6f39a37a16e6ab7d8ac2ed068608b.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Нужна помощь? -->
     <section class="help">
       <div class="container">
         <h2>Нужна помощь?</h2>
@@ -512,7 +534,7 @@
   <footer>
     <div class="container footer-grid">
       <div>
-        <p><strong>Олеся Портер — практичный психолог</strong></p>
+        <p><strong>Олеся Портер — практический психолог</strong></p>
         <p>Telegram: <a href="https://t.me/Olesya_psyh_kids" target="_blank" rel="noopener">@Olesya_psyh_kids</a></p>
         <p>© 2026 Олеся Портер</p>
       </div>
