@@ -84,9 +84,9 @@
 
     /* Photo cards (classes) */
     .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .photo-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .25s, box-shadow .25s; margin-bottom: 24px; }
+    .photo-card { background: var(--surface); border: 1px solid var(--border); overflow: hidden; transition: transform .25s, box-shadow .25s; }
     .photo-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .photo-card img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+    .photo-card img { width: 100%; height: auto; }
     .photo-card { display: flex; flex-direction: column; }
     .photo-card .body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex-grow: 1; }
     .photo-card .body p { flex-grow: 1; margin-bottom: 20px; }
@@ -256,13 +256,13 @@
       nav ul { gap: 18px; }
       .header-inner > .btn { display: none; }
     }
-    @media (max-width: 820px) {
+@media (max-width: 820px) {
       section { padding: 64px 0; }
       .hero { padding: 40px 0 90px; }
       .hero-grid { grid-template-columns: 1fr; gap: 36px; align-items: center; }
       .hero-media { max-width: 340px; margin: 0 auto; order: -1; }
       .split { grid-template-columns: 1fr; gap: 32px; }
-      .split.reverse .split-media { order: -1; }
+      .split.reverse .split-media { order: 1; } /* image goes down on mobile */
       .about-photo { margin: 0 auto; max-width: 320px; }
       .burger { display: block; }
       nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); padding: 16px 20px 24px; }
@@ -394,28 +394,28 @@
         <p class="lead">Развивающие программы в группе или индивидуально.</p>
         <div class="photo-grid">
           <article class="photo-card">
-            <img src="img_ways\эмоциональная_грамотность.png" alt="Девочка с воздушным шариком-улыбкой" loading="lazy">
-            <div class="body"><h3>Эмоциональная грамотность</h3><p>Разбираемся в собственных чувствах, учимся понимать эмоции окружающих и находить конструктивные способы справляться с тревогой, гневом и обидой.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+            <img src="img_ways/эмоциональная_грамотность.png" alt="Девочка с воздушным шариком-улыбкой" loading="lazy">
+            <div class="body"><p>Разбираемся в собственных чувствах, учимся понимать эмоции окружающих и находить конструктивные способы справляться с тревогой, гневом и обидой.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img_ways\уверенность_в_публичных_выступлениях.png" alt="Девочка выступает за трибуной с микрофоном" loading="lazy">
-            <div class="body"><h3>Уверенность в публичных выступлениях</h3><p>Осваиваем навыки самопрезентации, учимся спокойно отвечать перед классом, выступать перед аудиторией и доносить свои мысли понятно и убедительно.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+            <img src="img_ways/уверенность_в_публичных_выступлениях.png" alt="Девочка выступает за трибуной с микрофоном" loading="lazy">
+            <div class="body"><p>Осваиваем навыки самопрезентации, учимся спокойно отвечать перед классом, выступать перед аудиторией и доносить свои мысли понятно и убедительно.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img_ways\потенциал.png" alt="Подросток смотрит на лампочку-идею" loading="lazy">
-            <div class="body"><h3>Раскрытие способностей и личного потенциала</h3><p>Помогаем ребёнку увидеть свои сильные стороны, определить интересы и научиться использовать собственные ресурсы в учёбе и повседневной жизни.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+            <img src="img_ways/потенциал.png" alt="Подросток смотрит на лампочку-идею" loading="lazy">
+            <div class="body"><p>Помогаем ребёнку увидеть свои сильные стороны, определить интересы и научиться использовать собственные ресурсы в учёбе и повседневной жизни.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img_ways\лидерство_и_взаимодействие_в_команде.png" alt="Двое подростков вместе отмечают общие цели" loading="lazy">
-            <div class="body"><h3>Лидерство и взаимодействие в команде</h3><p>Развиваем инициативность, ответственность и умение сотрудничать, находить компромиссы и вместе с другими двигаться к результату.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+            <img src="img_ways/лидерство_и_взаимодействие_в_команде.png" alt="Двое подростков вместе отмечают общие цели" loading="lazy">
+            <div class="body"><p>Развиваем инициативность, ответственность и умение сотрудничать, находить компромиссы и вместе с другими двигаться к результату.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img_ways\навыки_общения.png" alt="Двое друзей с рюкзаками разговаривают" loading="lazy">
-            <div class="body"><h3>Навыки общения</h3><p>Тренируем умение знакомиться, начинать и поддерживать диалог, выстраивать дружеские отношения, отстаивать личные границы и разрешать разногласия.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+            <img src="img_ways/навыки_общения.png" alt="Двое друзей с рюкзаками разговаривают" loading="lazy">
+            <div class="body"><p>Тренируем умение знакомиться, начинать и поддерживать диалог, выстраивать дружеские отношения, отстаивать личные границы и разрешать разногласия.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
           <article class="photo-card">
-            <img src="img_ways\здоровая_самооценка.png" alt="Радостная девочка с плакатом-смайликом" loading="lazy">
-            <div class="body"><h3>Здоровая самооценка</h3><p>Учимся замечать собственные достижения, принимать свои особенности и сохранять уверенность в себе, даже когда мнения окружающих не совпадают с нашими.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+            <img src="img_ways/здоровая_самооценка.png" alt="Радостная девочка с плакатом-смайликом" loading="lazy">
+            <div class="body"><p>Учимся замечать собственные достижения, принимать свои особенности и сохранять уверенность в себе, даже когда мнения окружающих не совпадают с нашими.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
           </article>
         </div>
       </div>
@@ -425,13 +425,13 @@
     <section class="section-alt">
       <div class="container">
         <h2 style="margin-bottom:40px">Каждый ребёнок и подросток задаётся вопросом</h2>
-        <div class="q-grid">
-          <figure class="q-card"><img src="img_questions/parents.svg" alt="Двое сидят за столом, каждый сам по себе" loading="lazy"><blockquote>«Родители меня не понимают»</blockquote></figure>
-          <figure class="q-card"><img src="img_questions\не_могу_без_гаджетов.png" alt="Человек перед огромным смартфоном" loading="lazy"><blockquote>«Не могу без гаджетов»</blockquote></figure>
-          <figure class="q-card"><img src="img_questions\мое_тело_непропорционально.png" alt="Девочка разглядывает себя в зеркале" loading="lazy"><blockquote>«Моё тело непропорционально, я себе не нравлюсь»</blockquote></figure>
-          <figure class="q-card"><img src="img_questions\страшно_отвечать_у_доски.png" alt="Подросток стоит у доски" loading="lazy"><blockquote>«Страшно отвечать у доски»</blockquote></figure>
-          <figure class="q-card"><img src="img_questions/apathy.svg" alt="Девочка рядом с большим грустным смайликом" loading="lazy"><blockquote>«То ничего не хочется, то всё бесит»</blockquote></figure>
-          <figure class="q-card"><img src="img_questions\часто_раздражаюсь_и_срываюсь_на_близких.png" alt="Подросток со скрещёнными руками и грозовой тучкой над головой" loading="lazy"><blockquote>«Часто раздражаюсь и срываюсь на близких»</blockquote></figure>
+<div class="q-grid">
+          <!-- <figure class="q-card"><img src="" alt="Двое сидят за столом, каждый сам по себе" loading="lazy"></figure> -->
+          <figure class="q-card"><img src="img_questions\не_могу_без_гаджетов_3.png" alt="Человек перед огромным смартфоном" loading="lazy"></figure>
+          <figure class="q-card"><img src="img_questions\мое_тело_непропорционально_3.png" alt="Девочка разглядывает себя в зеркале" loading="lazy"></figure>
+          <figure class="q-card"><img src="img_questions\страшно_отвечать_у_доски_3.png" alt="Подросток стоит у доски" loading="lazy"></figure>
+          <!-- <figure class="q-card"><img src="" alt="Девочка рядом с большим грустным смайликом" loading="lazy"></figure> -->
+          <figure class="q-card"><img src="img_questions\часто_раздражаюсь_и_срываюсь_на_близких_3.png" alt="Подросток со скрещёнными руками и грозовой тучкой над головой" loading="lazy"></figure>
         </div>
         <p class="q-caption">Это нормальные переживания взросления. Но справляться с ними в одиночку тяжело, и здесь может помочь психолог.</p>
       </div>
@@ -448,14 +448,14 @@
           <p>Это не урок и не экзамен. Здесь не сравнивают участников и не ставят отметок. Главное — создать условия, в которых можно проявлять инициативу, учиться на собственном опыте и постепенно становиться увереннее.</p>
           <a class="btn btn-primary" href="https://t.me/Olesya_psyh_kids" target="_blank" rel="noopener">Записаться в группу</a>
         </div>
-        <div class="split-media"><img src="img/group-1.svg" alt="Ребята разговаривают за столом" loading="lazy"></div>
+        <div class="split-media"><img src="img/people_around.png" alt="Ребята разговаривают за столом" loading="lazy"></div>
       </div>
     </section>
 
     <!-- 7. Какие задачи помогают решать групповые занятия? -->
     <section class="section-alt">
       <div class="container split reverse">
-        <div class="split-media"><img src="img/group-2.svg" alt="Двое друзей сидят рядом" loading="lazy"></div>
+        <div class="split-media"><img src="img/people_around_3.png" alt="Двое друзей сидят рядом" loading="lazy"></div>
         <div>
           <h2>Какие задачи помогают решать групповые занятия?</h2>
           <ul class="check-list">
