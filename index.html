@@ -205,7 +205,7 @@
     .hero-media img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 10px solid #fff; border-radius: 47% 53% 44% 56% / 54% 44% 56% 46%; box-shadow: var(--shadow); }
     .float { position: absolute; width: 44px; height: 44px; background: center / contain no-repeat; animation: float 5s ease-in-out infinite; }
     .float-1 { top: 4%; left: 2%; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237a66b3' d='M12 21S3 15.5 3 8.8C3 5.9 5.2 4 7.7 4c1.800 0 3.400 1 4.300 2.600C12.900 5 14.500 4 16.300 4 18.800 4 21 5.900 21 8.800 21 15.500 12 21 12 21z'/%3E%3C/svg%3E"); }
-    .float-2 { top: 12%; right: 0; width: 36px; height: 36px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23a3d36a' d='M4 20C3 10 9 3 21 3c0 12-7 18-17 17z'/%3E%3C/svg%3E"); animation-delay: -2s; }
+    .float-2 { top: 12%; right: 0; width: 36px; height: 36px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23a3d36a' d='M4 20C3 10 9 3 21 3c0 12-7 18-17 17z'/%3E%3Csvg%3E"); animation-delay: -2s; }
     .float-3 { bottom: 6%; left: 8%; width: 32px; height: 32px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23a3d36a' d='M12 21S3 15.5 3 8.8C3 5.9 5.2 4 7.7 4c1.800 0 3.400 1 4.300 2.600C12.900 5 14.500 4 16.300 4 18.800 4 21 5.900 21 8.800 21 15.500 12 21 12 21z'/%3E%3C/svg%3E"); animation-delay: -3.500s; }
     @keyframes float { 50% { transform: translateY(-10px) rotate(6deg); } }
     @media (prefers-reduced-motion: reduce) { .float { animation: none; } html { scroll-behavior: auto; } }
@@ -259,8 +259,8 @@
     @media (max-width: 820px) {
       section { padding: 64px 0; }
       .hero { padding: 40px 0 90px; }
-      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      .hero-media { max-width: 340px; margin: 0 auto; }
+      .hero-grid { grid-template-columns: 1fr; gap: 36px; align-items: center; }
+      .hero-media { max-width: 340px; margin: 0 auto; order: -1; }
       .split { grid-template-columns: 1fr; gap: 32px; }
       .split.reverse .split-media { order: -1; }
       .about-photo { margin: 0 auto; max-width: 320px; }
@@ -271,6 +271,7 @@
       nav a { font-size: 17px; }
       .footer-grid { grid-template-columns: 1fr; }
       .req-card { max-width: none; }
+      .hero .btn { width: 100%; }
     }
     @media (max-width: 560px) {
       .req-grid, .format-grid, .photo-grid, .q-grid, .reviews { grid-template-columns: 1fr; }
@@ -306,6 +307,12 @@
     <!-- 2. Первый экран -->
     <section class="hero">
       <div class="container hero-grid">
+        <div class="hero-media">
+          <img src="img/header.png" alt="Психологическая помощь детям и подросткам">
+          <span class="float float-1" aria-hidden="true"></span>
+          <span class="float float-2" aria-hidden="true"></span>
+          <span class="float float-3" aria-hidden="true"></span>
+        </div>
         <div class="hero-content">
           <h1>Психологическая помощь детям и подросткам</h1>
           <p class="sub">Если ребёнку сложно справляться с тревогой, неуверенностью или конфликтами, важно вовремя оказать поддержку — чтобы он не замыкался в себе.</p>
@@ -321,64 +328,10 @@
             Получить консультацию
           </a>
         </div>
-        <div class="hero-media">
-          <img src="img/hero.svg" alt="Группа подростков фотографируется вместе">
-          <span class="float float-1" aria-hidden="true"></span>
-          <span class="float float-2" aria-hidden="true"></span>
-          <span class="float float-3" aria-hidden="true"></span>
-        </div>
       </div>
     </section>
 
-    <!-- 3. С чем можно прийти -->
-    <section id="requests">
-      <div class="container">
-        <h2 style="margin-bottom:40px">С какими запросами можно обратиться</h2>
-        <div class="req-grid">
-          <div class="card req-card"><div class="num">1</div><h3>Тревожность и детские страхи</h3><p>Страх темноты и высоты, переживания из-за разлуки с близкими, тревога перед школой, беспокойные мысли и внутреннее напряжение.</p></div>
-          <div class="card req-card"><div class="num">2</div><h3>Эмоции и поведенческие трудности</h3><p>Резкие эмоциональные реакции, вспышки раздражения, частые слёзы, агрессивное поведение, замкнутость и сложности с выражением чувств.</p></div>
-          <div class="card req-card"><div class="num">3</div><h3>Учёба и школьная адаптация</h3><p>Потеря интереса к занятиям, трудности с концентрацией внимания, волнение перед контрольными и экзаменами, эмоциональная усталость от школы.</p></div>
-          <div class="card req-card"><div class="num">4</div><h3>Отношения и общение</h3><p>Сложности в установлении дружеских контактов, конфликты с одноклассниками, переживания из-за одиночества, буллинг и непонимание со стороны сверстников.</p></div>
-          <div class="card req-card"><div class="num">5</div><h3>Самооценка и особенности подросткового возраста</h3><p>Сомнения в собственных силах, поиск личной идентичности, переживания из-за внешности, эмоциональная нестабильность и сложности с принятием себя.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. Занятия -->
-    <section id="classes" class="section-alt">
-      <div class="container">
-        <h2>Направления занятий и развития навыков</h2>
-        <p class="lead">Развивающие программы в группе или индивидуально.</p>
-        <div class="photo-grid">
-          <article class="photo-card">
-            <img src="img/class-emotions.svg" alt="Девочка с воздушным шариком-улыбкой" loading="lazy">
-            <div class="body"><h3>Эмоциональная грамотность</h3><p>Разбираемся в собственных чувствах, учимся понимать эмоции окружающих и находить конструктивные способы справляться с тревогой, гневом и обидой.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
-          </article>
-          <article class="photo-card">
-            <img src="img/class-speaking.svg" alt="Девочка выступает за трибуной с микрофоном" loading="lazy">
-            <div class="body"><h3>Уверенность в публичных выступлениях</h3><p>Осваиваем навыки самопрезентации, учимся спокойно отвечать перед классом, выступать перед аудиторией и доносить свои мысли понятно и убедительно.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
-          </article>
-          <article class="photo-card">
-            <img src="img/class-strengths.svg" alt="Подросток смотрит на лампочку-идею" loading="lazy">
-            <div class="body"><h3>Раскрытие способностей и личного потенциала</h3><p>Помогаем ребёнку увидеть свои сильные стороны, определить интересы и научиться использовать собственные ресурсы в учёбе и повседневной жизни.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
-          </article>
-          <article class="photo-card">
-            <img src="img/class-leadership.svg" alt="Двое подростков вместе отмечают общие цели" loading="lazy">
-            <div class="body"><h3>Лидерство и взаимодействие в команде</h3><p>Развиваем инициативность, ответственность и умение сотрудничать, находить компромиссы и вместе с другими двигаться к результату.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
-          </article>
-          <article class="photo-card">
-            <img src="img/class-communication.svg" alt="Двое друзей с рюкзаками разговаривают" loading="lazy">
-            <div class="body"><h3>Навыки общения</h3><p>Тренируем умение знакомиться, начинать и поддерживать диалог, выстраивать дружеские отношения, отстаивать личные границы и разрешать разногласия.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
-          </article>
-          <article class="photo-card">
-            <img src="img/class-selfesteem.svg" alt="Радостная девочка с плакатом-смайликом" loading="lazy">
-            <div class="body"><h3>Здоровая самооценка</h3><p>Учимся замечать собственные достижения, принимать свои особенности и сохранять уверенность в себе, даже когда мнения окружающих не совпадают с нашими.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5. Форматы работы -->
+    <!-- 2. Индивидуальные консультации и занятия -->
     <section id="formats">
       <div class="container">
         <h2 style="margin-bottom:44px">Индивидуальные консультации и занятия</h2>
@@ -401,7 +354,7 @@
             <span class="tag">Популярный формат</span>
             <h3>Групповые занятия</h3>
             <div class="desc">
-              <p>Психологические тренинги в небольшой группе ровесников. Через игры, практические задания и совместное обсуждение участники развивают навыки общения, учатся понимать себя и других, взаимодействовать и увереннее чувствовать себя в коллективе.</p>
+              <p>Психологические тренинги в небольшой группе ровесников. Через трансформационные авторские игры, практические задания и совместное обсуждение участники развивают навыки общения, учатся понимать себя и других, взаимодействовать и увереннее чувствовать себя в коллективе.</p>
               <p>Занятия проходят в поддерживающей обстановке, где каждый может проявить себя и попробовать новые модели поведения.</p>
             </div>
             <div class="meta">Продолжительность: 90 минут. Количество участников: до 8 человек.</div>
@@ -420,23 +373,71 @@
       </div>
     </section>
 
-    <!-- 6. Каждый ребёнок задаётся вопросом -->
+    <!-- 3. С чем можно прийти -->
+    <section id="requests">
+      <div class="container">
+        <h2 style="margin-bottom:40px">С какими запросами можно обратиться</h2>
+        <div class="req-grid">
+          <div class="card req-card"><div class="num">1</div><h3>Тревожность и детские страхи</h3><p>Страх темноты и высоты, переживания из-за разлуки с близкими, тревога перед школой, беспокойные мысли и внутреннее напряжение.</p></div>
+          <div class="card req-card"><div class="num">2</div><h3>Эмоции и поведенческие трудности</h3><p>Резкие эмоциональные реакции, вспышки раздражения, частые слёзы, агрессивное поведение, замкнутость и сложности с выражением чувств.</p></div>
+          <div class="card req-card"><div class="num">3</div><h3>Учёба и школьная адаптация</h3><p>Потеря интереса к занятиям, трудности с концентрацией внимания, волнение перед контрольными и экзаменами, эмоциональная усталость от школы.</p></div>
+          <div class="card req-card"><div class="num">4</div><h3>Отношения и общение</h3><p>Сложности в установлении дружеских контактов, конфликты с одноклассниками, переживания из-за одиночества, буллинг и непонимание со стороны сверстников.</p></div>
+          <div class="card req-card"><div class="num">5</div><h3>Самооценка и особенности подросткового возраста</h3><p>Сомнения в собственных силах, поиск личной идентичности, переживания из-за внешности, эмоциональная нестабильность и сложности с принятием себя.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Направления занятий и развития навыков -->
+    <section id="classes" class="section-alt">
+      <div class="container">
+        <h2>Направления занятий и развития навыков</h2>
+        <p class="lead">Развивающие программы в группе или индивидуально.</p>
+        <div class="photo-grid">
+          <article class="photo-card">
+            <img src="img_ways\эмоциональная_грамотность.png" alt="Девочка с воздушным шариком-улыбкой" loading="lazy">
+            <div class="body"><h3>Эмоциональная грамотность</h3><p>Разбираемся в собственных чувствах, учимся понимать эмоции окружающих и находить конструктивные способы справляться с тревогой, гневом и обидой.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+          </article>
+          <article class="photo-card">
+            <img src="img_ways\уверенность_в_публичных_выступлениях.png" alt="Девочка выступает за трибуной с микрофоном" loading="lazy">
+            <div class="body"><h3>Уверенность в публичных выступлениях</h3><p>Осваиваем навыки самопрезентации, учимся спокойно отвечать перед классом, выступать перед аудиторией и доносить свои мысли понятно и убедительно.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+          </article>
+          <article class="photo-card">
+            <img src="img_ways\потенциал.png" alt="Подросток смотрит на лампочку-идею" loading="lazy">
+            <div class="body"><h3>Раскрытие способностей и личного потенциала</h3><p>Помогаем ребёнку увидеть свои сильные стороны, определить интересы и научиться использовать собственные ресурсы в учёбе и повседневной жизни.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+          </article>
+          <article class="photo-card">
+            <img src="img_ways\лидерство_и_взаимодействие_в_команде.png" alt="Двое подростков вместе отмечают общие цели" loading="lazy">
+            <div class="body"><h3>Лидерство и взаимодействие в команде</h3><p>Развиваем инициативность, ответственность и умение сотрудничать, находить компромиссы и вместе с другими двигаться к результату.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+          </article>
+          <article class="photo-card">
+            <img src="img_ways\навыки_общения.png" alt="Двое друзей с рюкзаками разговаривают" loading="lazy">
+            <div class="body"><h3>Навыки общения</h3><p>Тренируем умение знакомиться, начинать и поддерживать диалог, выстраивать дружеские отношения, отстаивать личные границы и разрешать разногласия.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+          </article>
+          <article class="photo-card">
+            <img src="img_ways\здоровая_самооценка.png" alt="Радостная девочка с плакатом-смайликом" loading="lazy">
+            <div class="body"><h3>Здоровая самооценка</h3><p>Учимся замечать собственные достижения, принимать свои особенности и сохранять уверенность в себе, даже когда мнения окружающих не совпадают с нашими.</p><a class="btn btn-outline" href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">Подробнее</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Каждый ребёнок и подросток задаётся вопросом -->
     <section class="section-alt">
       <div class="container">
         <h2 style="margin-bottom:40px">Каждый ребёнок и подросток задаётся вопросом</h2>
         <div class="q-grid">
-          <figure class="q-card"><img src="img/q-parents.svg" alt="Двое сидят за столом, каждый сам по себе" loading="lazy"><blockquote>«Родители меня не понимают»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-gadgets.svg" alt="Человек перед огромным смартфоном" loading="lazy"><blockquote>«Не могу без гаджетов»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-body.svg" alt="Девочка разглядывает себя в зеркале" loading="lazy"><blockquote>«Моё тело непропорционально, я себе не нравлюсь»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-afraid.svg" alt="Подросток стоит у доски" loading="lazy"><blockquote>«Страшно отвечать у доски»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-apathy.svg" alt="Девочка рядом с большим грустным смайликом" loading="lazy"><blockquote>«То ничего не хочется, то всё бесит»</blockquote></figure>
-          <figure class="q-card"><img src="img/q-irritation.svg" alt="Подросток со скрещёнными руками и грозовой тучкой над головой" loading="lazy"><blockquote>«Часто раздражаюсь и срываюсь на близких»</blockquote></figure>
+          <figure class="q-card"><img src="img_questions/parents.svg" alt="Двое сидят за столом, каждый сам по себе" loading="lazy"><blockquote>«Родители меня не понимают»</blockquote></figure>
+          <figure class="q-card"><img src="img_questions\не_могу_без_гаджетов.png" alt="Человек перед огромным смартфоном" loading="lazy"><blockquote>«Не могу без гаджетов»</blockquote></figure>
+          <figure class="q-card"><img src="img_questions\мое_тело_непропорционально.png" alt="Девочка разглядывает себя в зеркале" loading="lazy"><blockquote>«Моё тело непропорционально, я себе не нравлюсь»</blockquote></figure>
+          <figure class="q-card"><img src="img_questions\страшно_отвечать_у_доски.png" alt="Подросток стоит у доски" loading="lazy"><blockquote>«Страшно отвечать у доски»</blockquote></figure>
+          <figure class="q-card"><img src="img_questions/apathy.svg" alt="Девочка рядом с большим грустным смайликом" loading="lazy"><blockquote>«То ничего не хочется, то всё бесит»</blockquote></figure>
+          <figure class="q-card"><img src="img_questions\часто_раздражаюсь_и_срываюсь_на_близких.png" alt="Подросток со скрещёнными руками и грозовой тучкой над головой" loading="lazy"><blockquote>«Часто раздражаюсь и срываюсь на близких»</blockquote></figure>
         </div>
         <p class="q-caption">Это нормальные переживания взросления. Но справляться с ними в одиночку тяжело, и здесь может помочь психолог.</p>
       </div>
     </section>
 
-    <!-- 7. Прокачать навыки -->
+    <!-- 6. Групповые тренинги для подростков -->
     <section>
       <div class="container split">
         <div>
@@ -451,7 +452,7 @@
       </div>
     </section>
 
-    <!-- 8. Вопросы, которые решают групповые занятия -->
+    <!-- 7. Какие задачи помогают решать групповые занятия? -->
     <section class="section-alt">
       <div class="container split reverse">
         <div class="split-media"><img src="img/group-2.svg" alt="Двое друзей сидят рядом" loading="lazy"></div>
@@ -471,7 +472,7 @@
       </div>
     </section>
 
-    <!-- 9. Обо мне -->
+    <!-- 8. Обо мне -->
     <section id="about">
       <div class="container split reverse">
         <div class="split-media">
@@ -494,27 +495,27 @@
       </div>
     </section>
 
-    <!-- 10. Сертификаты и дипломы -->
+    <!-- 9. Сертификаты и дипломы -->
     <section class="section-alt">
       <div class="container">
         <h2>Сертификаты и дипломы</h2>
         <p class="lead">Мои профессиональные квалификации и образование</p>
         <div class="photo-grid">
           <article class="photo-card">
-            <img src="PK554821_page-0001.jpg" alt="Сертификат PK554821" loading="lazy">
-            <a class="btn btn-outline" href="PK554821.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+            <img src="certs_jpg/PK554821_page-0001.jpg" alt="Сертификат PK554821" loading="lazy">
+            <a class="btn btn-outline" href="certs_pdf/PK554821.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
           </article>
           <article class="photo-card">
-            <img src="m41034_page-0001.jpg" alt="Сертификат m41034" loading="lazy">
-            <a class="btn btn-outline" href="m41034.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+            <img src="certs_jpg/m41034_page-0001.jpg" alt="Сертификат m41034" loading="lazy">
+            <a class="btn btn-outline" href="certs_pdf/m41034.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
           </article>
           <article class="photo-card">
-            <img src="14458_page-0001.jpg" alt="Сертификат 14458" loading="lazy">
-            <a class="btn btn-outline" href="14458.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+            <img src="certs_jpg/14458_page-0001.jpg" alt="Сертификат 14458" loading="lazy">
+            <a class="btn btn-outline" href="certs_pdf/14458.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
           </article>
           <article class="photo-card">
-            <img src="81e6f39a37a16e6ab7d8ac2ed068608b_page-0001.jpg" alt="Сертификат 81e6f39a37a16e6ab7d8ac2ed068608b" loading="lazy">
-            <a class="btn btn-outline" href="81e6f39a37a16e6ab7d8ac2ed068608b.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+            <img src="certs_jpg/81e6f39a37a16e6ab7d8ac2ed068608b_page-0001.jpg" alt="Сертификат 81e6f39a37a16e6ab7d8ac2ed068608b" loading="lazy">
+            <a class="btn btn-outline" href="certs_pdf/81e6f39a37a16e6ab7d8ac2ed068608b.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
           </article>
         </div>
       </div>
