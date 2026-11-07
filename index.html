@@ -111,8 +111,16 @@
 
     /* Teen questions */
     .q-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-    .q-card { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; }
-    .q-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.q-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 1;
+    }
+    .q-card img { width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #f5f5f5; }
     .q-card:hover img { transform: scale(1.05); }
     .q-card blockquote {
       position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 22px 20px; color: #fff;
@@ -147,8 +155,9 @@
     .facts li { background: var(--surface); border: 1px solid var(--border); padding: 8px 16px; border-radius: 999px; font-size: 14px; }
 
     /* Help */
-    .help {
-      color: #fff; text-align: center; padding: 110px 0;
+    .help a {
+      color: #fff;
+      text-decoration: underline;
     }
     .help p { max-width: 580px; margin: 0 auto 32px; font-size: 18px; opacity: .93; }
 
@@ -241,7 +250,15 @@
     .about-name { font-weight: 800; }
     .facts li { background: var(--ochre-light); border: 0; font-weight: 700; }
 
-    .help { padding: 30px 0 90px; color: #fff; background: none; }
+.help {
+      padding: 110px 0;
+      color: #fff;
+      background: none;
+      text-align: left;
+    }
+    .help a {
+      color: #fff;
+    }
     .help .container { width: calc(100% - 40px); max-width: 1100px; padding: 72px 28px; border-radius: 44px; background: url("img/help-bg.svg") center bottom / cover no-repeat, linear-gradient(120deg, #5f4d96, #557d2d); }
     .help h2::after { margin-left: auto; margin-right: auto; }
     .help p { opacity: 1; }
@@ -426,12 +443,12 @@
       <div class="container">
         <h2 style="margin-bottom:40px">Каждый ребёнок и подросток задаётся вопросом</h2>
 <div class="q-grid">
-          <!-- <figure class="q-card"><img src="" alt="Двое сидят за столом, каждый сам по себе" loading="lazy"></figure> -->
-          <figure class="q-card"><img src="img_questions\не_могу_без_гаджетов_3.png" alt="Человек перед огромным смартфоном" loading="lazy"></figure>
-          <figure class="q-card"><img src="img_questions\мое_тело_непропорционально_3.png" alt="Девочка разглядывает себя в зеркале" loading="lazy"></figure>
-          <figure class="q-card"><img src="img_questions\страшно_отвечать_у_доски_3.png" alt="Подросток стоит у доски" loading="lazy"></figure>
-          <!-- <figure class="q-card"><img src="" alt="Девочка рядом с большим грустным смайликом" loading="lazy"></figure> -->
-          <figure class="q-card"><img src="img_questions\часто_раздражаюсь_и_срываюсь_на_близких_3.png" alt="Подросток со скрещёнными руками и грозовой тучкой над головой" loading="lazy"></figure>
+<figure class="q-card"><img src="img_questions\родители_меня_не_понимают.png" alt="Двое сидят за столом, каждый сам по себе" loading="lazy"></figure>
+      <figure class="q-card"><img src="img_questions\не_могу_без_гаджетов.png" alt="Человек перед огромным смартфоном" loading="lazy"></figure>
+      <figure class="q-card"><img src="img_questions\мое_тело_непропорционально.png" alt="Девочка разглядывает себя в зеркале" loading="lazy"></figure>
+      <figure class="q-card"><img src="img_questions\страшно_отвечать_у_доски.png" alt="Подросток стоит у доски" loading="lazy"></figure>
+      <figure class="q-card"><img src="img_questions\то_ничего_не_хочется.png" alt="Девочка рядом с большим грустным смайликом" loading="lazy"></figure>
+      <figure class="q-card"><img src="img_questions\часто_раздражаюсь.png" alt="Подросток со скрещёнными руками и грозовой тучкой над головой" loading="lazy"></figure>
         </div>
         <p class="q-caption">Это нормальные переживания взросления. Но справляться с ними в одиночку тяжело, и здесь может помочь психолог.</p>
       </div>
@@ -506,16 +523,16 @@
             <a class="btn btn-outline" href="certs_pdf/bachelor_cert.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
           </article>
           <article class="photo-card">
+            <img src="certs_jpg/14458_page-0001.jpg" alt="Сертификат 14458" loading="lazy">
+            <a class="btn btn-outline" href="certs_pdf/14458.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
+          </article>
+          <article class="photo-card">
             <img src="certs_jpg/PK554821_page-0001.jpg" alt="Сертификат PK554821" loading="lazy">
             <a class="btn btn-outline" href="certs_pdf/PK554821.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
           </article>
           <article class="photo-card">
             <img src="certs_jpg/m41034_page-0001.jpg" alt="Сертификат m41034" loading="lazy">
             <a class="btn btn-outline" href="certs_pdf/m41034.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
-          </article>
-          <article class="photo-card">
-            <img src="certs_jpg/14458_page-0001.jpg" alt="Сертификат 14458" loading="lazy">
-            <a class="btn btn-outline" href="certs_pdf/14458.pdf" target="_blank" rel="noopener">Просмотреть сертификат</a>
           </article>
           <article class="photo-card">
             <img src="certs_jpg/81e6f39a37a16e6ab7d8ac2ed068608b_page-0001.jpg" alt="Сертификат 81e6f39a37a16e6ab7d8ac2ed068608b" loading="lazy">
@@ -525,13 +542,17 @@
       </div>
     </section>
 
-    <!-- 11. Нужна помощь? -->
-    <section class="help">
-      <div class="container">
-        <h2>Нужна помощь?</h2>
-        <p>Напишите мне в Telegram: коротко расскажите о ситуации и возрасте ребёнка. Я отвечу, помогу разобраться и предложу подходящий формат.</p>
-      </div>
-    </section>
+<!-- 11. Нужна помощь? -->
+  <section class="help">
+    <div class="container">
+      <h2>Нужна помощь?</h2>
+      <p>Вы можете связаться со мной любым удобным способом:</p>
+      <p><strong>Телефон:</strong> <a href="tel:+79163965036">+7 (916) 396-50-36</a></p>
+      <p><strong>Telegram:</strong> <a href="https://t.me/Olesya_Porter" target="_blank" rel="noopener">@Olesya_Porter</a></p>
+      <!-- <p><strong>Instagram:</strong> <a href="https://instagram.com/ol_porter" target="_blank" rel="noopener">@ol_porter</a></p> -->
+      <p><strong>Email:</strong> <a href="Olesya.psyh.kids-1@yandex.ru">Olesya.psyh.kids-1@yandex.ru</a></p>
+    </div>
+  </section>
 
   </main>
 
